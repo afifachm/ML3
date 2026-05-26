@@ -1,0 +1,15 @@
+stages:
+  train:
+    cmd: python TrainModel.py
+    deps:
+    - Retail_sales.csv
+    - TrainModel.py
+    outs:
+    - linear_regression_model.pkl
+  plot:
+    cmd: python PlotModel.py
+    deps:
+    - PlotModel.py
+    - linear_regression_model.pkl
+    outs:
+    - plot.png
